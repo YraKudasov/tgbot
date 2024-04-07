@@ -16,6 +16,9 @@ def newChat(message):
 def callback_message(callback):
     if callback.data == 'sendToDepartment':
         bot.send_message(callback.message.chat.id, 'Ваш запрос успешно отправлен в ведомство!')
+    elif callback.data == 'changeGroups':
+        bot.send_message(callback.message.chat.id, 'Введите корректную группу тем:')
+        bot.register_next_step_handler(callback.message, process_new_string)
     
 
 @bot.message_handler(commands=['help'])
