@@ -9,4 +9,11 @@ def newChat(message):
                      f'Здравствуйте, <b>{message.from_user.first_name}</b>.\nС каким <b><u>социальным вопросом</u></b> вам необходимо помочь?',parse_mode='HTML')
     
 
+
+@bot.callback_query_handler(func=lambda callback:True)
+def callback_message(callback):
+    if callback.data == 'sendToDepartment':
+        bot.send_message(callback.message.chat.id, 'Ваш запрос успешно отправлен в ведомство!')
+    
+
 bot.infinity_polling()
