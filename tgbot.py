@@ -33,6 +33,17 @@ def helpCommand(message):
                                       f'**Для более точного определения проблемы укажите ваш <b>город</b> и <b>адрес</b>(при необходимости)**\n\n'
                                       f'2) Dvora бот самостоятельно определит сферу и тему вашего обращения.\n\n'
                                       f'3) Далее, Drova отправит запрос в отделение, ответственное за решение данного вопроса.', parse_mode='HTML')
+
+
+@bot.message_handler()
+def answerQuestion(message):
+    markup = types.InlineKeyboardMarkup()
+    btn1 = types.InlineKeyboardButton('Все ключевые элементы выделены верно', callback_data='sendToDepartment')
+    markup.row(btn1)
+    btn2 = types.InlineKeyboardButton(' Тему', callback_data='changeTheme')
+    btn3 = types.InlineKeyboardButton(' Исп. орг.', callback_data='changeDepartment')
+    markup.row( btn2, btn3)
+    
     
 
 bot.infinity_polling()
