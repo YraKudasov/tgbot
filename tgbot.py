@@ -43,6 +43,12 @@ def process_new_string(message):
     btn3 = types.InlineKeyboardButton('❌ Тему', callback_data='changeTheme')
     btn4 = types.InlineKeyboardButton('❌ Исп. орг.', callback_data='changeDepartment')
     markup.row(btn2, btn3, btn4)
+    bot.send_message(message.chat.id, f'В вашем запросе были выделены следующие ключевые элементы:\n\n'
+                                      f'Группа тем - Памятники и объекты культурного наследия\n'
+                                      f'Тема - Памятники и объекты культурного наследия</b>\n'
+                                      f'Исполнительный орган - Росохранкультура\n\n'
+                                      f'Проверьте, пожалуйста, правильность определенных данных', parse_mode='HTML',
+                     reply_markup=markup)
 
 
 @bot.message_handler(commands=['spheres'])
