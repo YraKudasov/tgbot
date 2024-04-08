@@ -49,6 +49,10 @@ def answerQuestion(message):
     btn3 = types.InlineKeyboardButton('❌ Тему', callback_data='changeTheme')
     btn4 = types.InlineKeyboardButton('❌ Исп. орг.', callback_data='changeDepartment')
     markup.row( btn2, btn3, btn4)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+    bot.send_message(message.chat.id, 'Подождите пожалуйста, ваш запрос обрабатывается...')
 >>>>>>> Stashed changes
     
     
