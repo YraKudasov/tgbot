@@ -45,6 +45,12 @@ def answerQuestion(message):
     btn4 = types.InlineKeyboardButton('❌ Исп. орг.', callback_data='changeDepartment')
     markup.row( btn2, btn3, btn4)
     bot.send_message(message.chat.id, 'Подождите пожалуйста, ваш запрос обрабатывается...')
+    bot.send_message(message.chat.id, f'В вашем запросе были выделены следующие ключевые элементы:\n\n'
+                                      f'Группа тем - <b>Строительство и архитектура</b>\n'
+                                      f'Тема - <b>Памятники и объекты культурного наследия</b>\n'
+                                      f'Исполнительный орган - <b>Росохранкультура</b>\n\n'
+                                      f'Проверьте, пожалуйста, правильность определенных данных', parse_mode='HTML', reply_markup=markup)
+
     
     
 
