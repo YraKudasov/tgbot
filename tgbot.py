@@ -53,6 +53,15 @@ def answerQuestion(message):
 >>>>>>> Stashed changes
 =======
     bot.send_message(message.chat.id, 'Подождите пожалуйста, ваш запрос обрабатывается...')
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+    bot.send_message(message.chat.id, f'В вашем запросе были выделены следующие ключевые элементы:\n\n'
+                                      f'Группа тем - <b>Строительство и архитектура</b>\n'
+                                      f'Тема - <b>Памятники и объекты культурного наследия</b>\n'
+                                      f'Исполнительный орган - <b>Росохранкультура</b>\n\n'
+                                      f'Проверьте, пожалуйста, правильность определенных данных', parse_mode='HTML', reply_markup=markup)
+
 >>>>>>> Stashed changes
     
     
